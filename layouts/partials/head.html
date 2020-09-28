@@ -9,6 +9,8 @@
     {{ $override := $overrideTemplate | resources.ExecuteAsTemplate "css/theme.scss" . | toCSS | minify }}
     <link rel="stylesheet" href="{{ $override.RelPermalink }}">
 
+    <link rel="icon" type="image/png" href="/favicon.png"/>
+
     {{/* Adds custom styles capability */}}
     {{ $customTemplate := resources.Get "sass/custom.scss" }}
     {{ if $customTemplate }}
